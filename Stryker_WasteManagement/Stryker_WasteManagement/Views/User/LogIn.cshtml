@@ -1,0 +1,31 @@
+﻿@model Stryker_WasteManagement.Models.UserModel
+@{
+    ViewBag.Title = "LogIn";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Login Failed");
+    
+    <div style="padding-top:30px">
+        <fieldset>
+            <legend>Welcome User</legend>
+            <p>
+                @Html.LabelFor(u => u.userName)
+                @Html.TextBoxFor(u => u.userName)
+                @Html.ValidationMessageFor(u => u.userName)
+            </p>
+
+            <p>
+                @Html.LabelFor(u => u.password)
+                @Html.PasswordFor(u => u.password)
+                @Html.ValidationMessageFor(u => u.password)
+
+            <p>
+                <input type="submit" value="Log In" />
+
+            </p>
+        </fieldset>
+    </div>
+}
+
